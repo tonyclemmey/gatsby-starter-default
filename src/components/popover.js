@@ -80,8 +80,8 @@ function MyPopover() {
             {({ open }) => (
                 <>
                     <div
-                        onMouseEnter={() => onHover(open, "onMouseEnter")}
-                        onMouseLeave={() => onHover(open, "onMouseLeave")}
+                        // onMouseEnter={() => onHover(open, "onMouseEnter")}
+                        // onMouseLeave={() => onHover(open, "onMouseLeave")}
                         className="flex flex-col"
                     >
                         <Popover.Button
