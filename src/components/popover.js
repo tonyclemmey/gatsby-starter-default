@@ -24,22 +24,7 @@ function MyPopover() {
     let [referenceElement, setReferenceElement] = useState(null)
     let [popperElement, setPopperElement] = useState(null)
     const [arrowElement, setArrowElement] = useState(null)
-    let { styles, attributes } = usePopper(referenceElement, popperElement, {
-        modifiers: [
-            {
-                name: 'arrow',
-                options: {
-                    element: arrowElement
-                }
-            },
-            {
-                name: 'offset',
-                options: {
-                    offset: [0, 6],
-                },
-            },
-        ],
-    })
+    let { styles, attributes } = usePopper(referenceElement, popperElement)
 
     let timeout // NodeJS.Timeout
     const timeoutDuration = 400
@@ -109,7 +94,7 @@ function MyPopover() {
                             <span>Solutions</span>
                             <ChevronDownIcon
                                 className={`
-${open ? 'transform -rotate-180' : ''}
+${open ? '-rotate-180' : ''}
 ml-2 h-5 w-5 text-orange-300 group-hover:text-opacity-80 transition ease-in-out duration-150`}
                                 aria-hidden="true"
                             />
@@ -124,13 +109,11 @@ ml-2 h-5 w-5 text-orange-300 group-hover:text-opacity-80 transition ease-in-out 
                             leaveTo="opacity-0 translate-y-1"
                         >
                             <Popover.Panel static
+                                class="z-10"
                                 ref={setPopperElement}
                                 style={styles.popper}
                                 {...attributes.popper}
                             >
-                                <div ref={setArrowElement} style={styles.arrow} className={`w-4 h-4 mt-2 
-after:bg-white after:w-4 after:h-4 after:absolute after:t-0 after:l-0 after:transform after:rotate-45`}
-                                />
                                 <a href="/analytics">Analytics</a>
                                 <a href="/engagement">Engagement</a>
                                 <a href="/security">Security</a>
