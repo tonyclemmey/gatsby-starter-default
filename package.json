@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
     "@popperjs/core": "^2.11.0",
     "gatsby": "^4.4.0",
     "gatsby-plugin-gatsby-cloud": "^4.4.0",
